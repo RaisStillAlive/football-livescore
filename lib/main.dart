@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Football Match App',
+      title: 'WC Update App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -42,13 +42,13 @@ class _MatchListScreenState extends State<MatchListScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 40), // For status bar padding
-              Text('Glad to see you,', style: TextStyle(fontSize: 16)),
-              Text('Esther Howard!',
+              Text('Welcome,', style: TextStyle(fontSize: 16)),
+              Text('Mulyono Siregar!',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
               SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  hintText: 'Find your favorite club',
+                  hintText: 'Find your National Team',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10)),
                   prefixIcon: Icon(Icons.search),
@@ -69,36 +69,36 @@ class _MatchListScreenState extends State<MatchListScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Premier League',
+                          Text('World Cup',
                               style: TextStyle(fontSize: 16)),
-                          Text("90+6'",
+                          Text("80'",
                               style:
-                                  TextStyle(fontSize: 16, color: Colors.red)),
+                                  TextStyle(fontSize: 16, color: Colors.blue)),
                         ],
                       ),
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/arsenal.png', height: 40),
+                          Image.asset('assets/images/france.png', height: 40),
                           SizedBox(width: 20),
                           RichText(
                             text: TextSpan(
                               style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black),
+                                  color: Colors.red),
                               children: [
                                 TextSpan(
-                                    text: '2',
+                                    text: '3',
                                     style: TextStyle(color: Colors.green)),
                                 TextSpan(text: ' : '),
-                                TextSpan(text: '1'),
+                                TextSpan(text: '0'),
                               ],
                             ),
                           ),
                           SizedBox(width: 20),
-                          Image.asset('assets/images/chelsea.png', height: 40),
+                          Image.asset('assets/images/japan.png', height: 40),
                         ],
                       ),
                       SizedBox(height: 10),
@@ -110,9 +110,9 @@ class _MatchListScreenState extends State<MatchListScreen> {
                                 builder: (context) => LiveScoreScreen()),
                           );
                         },
-                        child: Text('Live'),
+                        child: Text('LIVE'),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Colors.blue,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -138,19 +138,19 @@ class _MatchListScreenState extends State<MatchListScreen> {
                 child: Row(
                   children: [
                     FinishedMatchCard(
-                      league: 'Champions League',
+                      league: 'World Cup',
                       date: 'Yesterday',
-                      team1Logo: 'assets/images/juventus.png',
-                      team2Logo: 'assets/images/psg.png',
-                      score: '1 : 0',
+                      team1Logo: 'assets/images/brazil.png',
+                      team2Logo: 'assets/images/indonesia.png',
+                      score: '7 : 7',
                     ),
                     SizedBox(width: 10),
                     FinishedMatchCard(
-                      league: 'Champions League',
+                      league: 'World Cup',
                       date: 'Yesterday',
-                      team1Logo: 'assets/images/bayern.png',
-                      team2Logo: 'assets/images/barca.png',
-                      score: '8 : 2',
+                      team1Logo: 'assets/images/argentina.png',
+                      team2Logo: 'assets/images/england.png',
+                      score: '5 : 2',
                     ),
                     // Add more cards here if needed
                   ],
@@ -237,14 +237,14 @@ class FinishedMatchCard extends StatelessWidget {
                             text: scores[0],
                             style: TextStyle(
                                 color: team1Score > team2Score
-                                    ? Colors.green
+                                    ? Colors.black
                                     : Colors.black)),
                         TextSpan(text: ' : '),
                         TextSpan(
                             text: scores[1],
                             style: TextStyle(
                                 color: team2Score > team1Score
-                                    ? Colors.green
+                                    ? Colors.black
                                     : Colors.black)),
                       ],
                     ),
@@ -288,7 +288,7 @@ class LiveScoreScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Premier League",
+                      "World Cup",
                       style: TextStyle(fontSize: 16),
                     ),
                     Text(
@@ -302,11 +302,11 @@ class LiveScoreScreen extends StatelessWidget {
                         Column(
                           children: [
                             Image.asset(
-                              'assets/images/arsenal.png',
+                              'assets/images/france.png',
                               width: 50,
                               height: 50,
                             ),
-                            Text('Arsenal'),
+                            Text('France'),
                           ],
                         ),
                         RichText(
@@ -327,11 +327,11 @@ class LiveScoreScreen extends StatelessWidget {
                         Column(
                           children: [
                             Image.asset(
-                              'assets/images/chelsea.png',
+                              'assets/images/japan.png',
                               width: 50,
                               height: 50,
                             ),
-                            Text('Chelsea'),
+                            Text('Japan'),
                           ],
                         ),
                       ],
@@ -350,17 +350,17 @@ class LiveScoreScreen extends StatelessWidget {
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundImage: AssetImage(
-                      'assets/images/martin.jpg',
+                      'assets/images/comeni.png',
                     ),
                   ),
-                  title: Text('Top Player'),
-                  subtitle: Text('Martin Ödegaard'),
+                  title: Text('Man Of The Match'),
+                  subtitle: Text('Aurélien Tchouaméni'),
                 ),
               ),
             ),
             SizedBox(height: 10),
             Text(
-              '  Match Stats',
+              'Stats',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Card(
@@ -379,18 +379,18 @@ class LiveScoreScreen extends StatelessWidget {
                       children: [
                         MatchStatRow(
                           title: 'Total Shots',
-                          leftValue: '19',
-                          rightValue: '12',
+                          leftValue: '12',
+                          rightValue: '5',
                         ),
                         MatchStatRow(
                           title: 'Shots on Target',
                           leftValue: '7',
-                          rightValue: '4',
+                          rightValue: '2',
                         ),
                         MatchStatRow(
                           title: 'Possession',
-                          leftValue: '55%',
-                          rightValue: '45%',
+                          leftValue: '86%',
+                          rightValue: '53%',
                         ),
                       ],
                     ),

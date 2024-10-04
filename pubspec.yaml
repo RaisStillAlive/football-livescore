@@ -60,13 +60,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/arsenal.png
-    - assets/images/bayern.png
-    - assets/images/chelsea.png
-    - assets/images/barca.png
-    - assets/images/martin.jpg
-    - assets/images/juventus.png
-    - assets/images/psg.png
+  
+    - assets/images/france.png
+    - assets/images/indonesia.png
+    - assets/images/brazil.png
+    - assets/images/argentina.png
+    - assets/images/england.png
+    - assets/images/japan.png
+    - assets/images/comeni.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
